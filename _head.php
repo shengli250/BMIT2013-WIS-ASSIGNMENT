@@ -15,7 +15,7 @@
     </header>
 
     <nav>
-        <a href="/">Nav Index</a>
+        <a href="/">Navbar</a>
 
     <main>
         <h1><?= $_title ?? 'Untitled' ?></h1>

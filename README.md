@@ -1,3 +1,5 @@
+<code>php -S localhost:8000</code>
+
 # Todo:
 
 ## Security
