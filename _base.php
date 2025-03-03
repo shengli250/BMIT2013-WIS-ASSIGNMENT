@@ -5,6 +5,7 @@
 // ============================================================================
 
 date_default_timezone_set('Asia/Kuala_Lumpur');
+define('BASE_URL', '/'); //TODO: Change if needed for subdirectories
 session_start();
 
 // ============================================================================

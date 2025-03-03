@@ -9,7 +9,7 @@ include '_head.php';
 
 
 <?php
-redirect('page/login.php');
+redirect('page/member/login.php');
 ?>
 
 
