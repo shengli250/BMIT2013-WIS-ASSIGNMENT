@@ -22,12 +22,27 @@ header, footer{
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden; 
 }
 
 .poster img {
     width: 100%;
     max-width: 1500px;
     height: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-links {
