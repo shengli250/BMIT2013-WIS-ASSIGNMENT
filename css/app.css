@@ -9,3 +9,70 @@ header, footer{
 .err {
     color: red;
 }
+
+.member-auth-buttons {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.poster {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.poster img {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #007bff;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+.search-bar {
+    display: flex;
+    margin-left: auto;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}

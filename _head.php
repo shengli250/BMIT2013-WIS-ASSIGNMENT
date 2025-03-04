@@ -11,7 +11,25 @@
 </head>
 <body>
     <header>
-        <p>Header</p>
+        </div>
+        <h1><a href="/">Epal Aifon</a></h1>
+        <nav class="nav-links">
+            <a href="<?= BASE_URL ?>index.php">Home</a>
+            <a href="<?= BASE_URL ?>products.php">Our Product</a>
+            <a href="<?= BASE_URL ?>about.php">About</a>
+            <a href="<?= BASE_URL ?>contact.php">Contact</a>
+        </nav>
+        <div class="search-bar">
+            <form action="<?= BASE_URL ?>search.php" method="GET">
+                <input type="text" name="query" placeholder="Search products..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="member-auth-buttons">
+            <a href="<?= BASE_URL ?>cart.php" class="btn cart-btn">🛒 Cart</a>
+            <a href="<?= BASE_URL ?>page/member/login.php" class="btn">Login</a>
+            <a href="<?= BASE_URL ?>page/member/register.php" class="btn">Register</a>
+        </div>
     </header>
 
     <nav>
