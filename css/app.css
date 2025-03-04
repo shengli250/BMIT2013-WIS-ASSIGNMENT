@@ -1,3 +1,11 @@
-﻿header, footer{
+﻿* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header, footer{
     background-color: cyan;
+}
+
+.err {
+    color: red;
 }

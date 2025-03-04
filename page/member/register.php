@@ -1,37 +1,43 @@
 ﻿<?php
 require '../../_base.php';
+include "../../config/db.php";
 // ----------------------------------------------------------------------------
 
-$_err = []; // Initialize error array
-
 if (is_post()) {    // Detect if data is sent by POST method
+    
     $username  = req('username');
     $password  = req('password');
     $password2 = req('password2');
-    
+   
+    $_err = [];
     // Validate username
     if ($username == '') {
         $_err['username'] = 'Required';
     }
-    else if (strlen($username) > 20) {
+    elseif (strlen($username) > 20) {
         $_err['username'] = 'Maximum length 20';
     }
-    else if (!preg_match('/^[A-Za-z0-9]+$/', $username)) { // Corrected regex
+    elseif (!preg_match('/^[A-Za-z0-9]+$/', $username)) {
         $_err['username'] = 'Invalid format';
     }
+
 
     // Validate password
     if ($password == '') {
         $_err['password'] = 'Required';
+    }
+    else if (strlen($password) < 6){
+        $_err['password'] = 'Password to short';
     }
     
     // Validate second password
     if ($password2 == '') {
         $_err['password2'] = 'Required';
     }
-    else if ($password != $password2) {
-        $_err['password2'] = 'Different';
+    elseif ($password != $password2) {
+        $_err['password2'] = 'Password does not match';
     }
+
 
     // Output
     if (empty($_err)) { // Use empty() instead of negating an array
@@ -39,9 +45,9 @@ if (is_post()) {    // Detect if data is sent by POST method
 
         $data = (object)compact('username', 'password');
         temp('data', $data);
-
         redirect('login.php');
     }
+    
 }
 
 // ----------------------------------------------------------------------------
@@ -51,7 +57,7 @@ include '../../_head.php';
 
 <form method="post" class="form">
     <label for="username">Username</label>
-    <?= html_text('name', 'maxlength="100"') ?>
+    <?= html_reqtext('username', 'maxlength="20"') ?>
     <?= err('username') ?>
     <br>
 
@@ -66,7 +72,7 @@ include '../../_head.php';
     <br>
 
     <section>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
         <button type="reset">Reset</button>
     </section>
 </form>

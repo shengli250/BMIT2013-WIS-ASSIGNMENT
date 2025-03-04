@@ -180,10 +180,16 @@ function html_text($key, $attr = '') {
     echo "<input type='text' id='$key' name='$key' value='$value' $attr>";
 }
 
+// Generate <input type='text'>, prompt require if left blank
+function html_reqtext($key, $attr = '') {
+    $value = encode($GLOBALS[$key] ?? '');
+    echo "<input type='text' id='$key' name='$key' value='$value' $attr required>";
+}
+
 // Generate <input type='password'>
 function html_password($key, $attr = '') {
     $value = encode($GLOBALS[$key] ?? '');
-    echo "<input type='password' id='$key' name='$key' value='$value' $attr>";
+    echo "<input type='password' id='$key' name='$key' value='$value' $attr required>";
 }
 
 // Generate <input type='number'>
