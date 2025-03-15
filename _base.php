@@ -412,9 +412,17 @@ function update_cart($id, $unit) {
 // ============================================================================
 
 // Global PDO object
+<<<<<<< Updated upstream
 // $_db = new PDO('mysql:dbname=db11', 'root', '', [
 //     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
 // ]);
+=======
+// !Database name: epaldb
+
+$_db = new PDO('mysql:dbname=epaldb', 'root', '', [
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+]);
+>>>>>>> Stashed changes
 
 // Is unique?
 function is_unique($value, $table, $field) {
@@ -431,6 +439,7 @@ function is_exists($value, $table, $field) {
     $stm->execute([$value]);
     return $stm->fetchColumn() > 0;
 }
+
 
 // ============================================================================
 // Global Constants and Variables
